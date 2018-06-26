@@ -20,11 +20,11 @@ class MiniURL(models.Model):
 
 		super(MiniURL, self).save(*args, **kwargs)	
 
-	def generate(self, n_caracters):
-		caracters = string.ascii_letters + string.digits
-		random = [random.choice(caracters) for _ in range(n_caracters)]
+	def generate(self, n_characters):
+		characters = string.ascii_letters + string.digits
+		random_chars = [random.choice(characters) for _ in range(n_characters)]
 		
-		self.code = ''.join(random)
+		self.code = ''.join(random_chars)
 		
 
 	class Meta:
