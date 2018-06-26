@@ -6,7 +6,7 @@
 
 <ul>
 	{% for url in mini_urls %}
-	<li>{{ url.url }} via <a href="{% url 'redirect' url.code %}">{{ request.get_host }}{% url 'redirect' url.code %}</a>
+	<li>{{ url.url }} via <a href="{% url 'redirection' url.code %}">{{ request.get_host }}{% url 'redirection' url.code %}</a>
 	{% if url.pseudo %} by {{ url.pseudo }}{% endif %} ({{ url.n_access }} access{{ url.access|pluralize }})</li>
 	{% empty %}
 	<li>There are no URLs registered.</li>
