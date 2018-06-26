@@ -1,0 +1,7 @@
+<h1>Shorten an URL</h1>
+
+<form action="{% url "shorten" %}" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Validate" />	
+</form>

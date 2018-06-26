@@ -1,0 +1,15 @@
+<h1>URLs shortener</h1>
+
+<p><a href="{% url 'shorten' %}">Shorten an URL.</a></p>
+
+<p>List of the URLs shortened:</p>
+
+<ul>
+	{% for url in mini_urls %}
+	<li>{{ url.url }} via <a href="{% url 'redirect' url.code %}">{{ request.get_host }}{% url 'redirect' url.code %}</a>
+	{% if url.pseudo %} by {{ url.pseudo }}{% endif %} ({{ url.access }} access{{ url.access|pluralize }})</li>
+	{% empty %}
+	<li>There are no URLs registered.</li>
+	{% endfor %}
+</ul>
+
